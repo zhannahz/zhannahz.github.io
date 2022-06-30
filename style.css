@@ -30,14 +30,16 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+/* font */ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+     
 ::selection {
 		background-color: blue;
 		color: white;
 	opacity: 1;
 }
 body {
-		-webkit-tap-highlight-color: rgba(0, 0, 255, 0.25);
-
+	-webkit-tap-highlight-color: rgba(0, 0, 255, 0.25);
 	line-height: 1;
 }
 ol, ul {
@@ -58,7 +60,7 @@ table {
 html, body, object {
 	width: 100%;
 	max-width: 100%;
-	font-family: 'helvetica', arial, sans-serif;
+	font-family: 'Noto Sans SC', 'helvetica', sans-serif;
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
