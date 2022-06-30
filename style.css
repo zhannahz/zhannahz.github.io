@@ -34,8 +34,8 @@ footer, header, hgroup, menu, nav, section {
 /* font */ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
      
 ::selection {
-		background-color: blue;
-		color: white;
+	background-color: blue;
+	color: white;
 	opacity: 1;
 }
 body {
@@ -96,6 +96,29 @@ a {
 .page-template-default .single-content {
 	padding-bottom: 50px;
 }
+/*  hedaer */
+.header-menu ul li{
+    position: fixed;
+    padding: .5rem;
+    z-index: 999;
+}
+
+.header-menu ul li:nth-child(1){
+    left: 0;
+    top:0;
+    z-index: 999999;
+    width: 80%;
+}
+.header-menu ul li:nth-child(2){
+    right: 0;
+    top:0;
+}
+.header-menu ul li:nth-child(3){
+    left: 0;
+    bottom:0;
+}
+
+/*  other */
 .single-content,
 .content {
 	width: 75%;
