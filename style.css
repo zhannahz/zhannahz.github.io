@@ -107,7 +107,6 @@ a {
     left: 0;
     top:0;
     z-index: 999999;
-    width: 80%;
 }
 .header-menu ul li:nth-child(2){
     right: 0;
