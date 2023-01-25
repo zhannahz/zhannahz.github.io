@@ -1,0 +1,313 @@
+<html>
+  <head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Opinion | 系统设计学</title>
+<link rel="shortcut icon" href="https://zhannahz.github.io/favicon.ico?v=1674661221281">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://zhannahz.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Opinion | 系统设计学 - Atom Feed" href="https://zhannahz.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138325172-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-138325172-1');
+</script>
+
+
+  <meta name="description" content="game-design, game, game-industry, 游戏设计, 游戏" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://zhannahz.github.io">
+  <img class="avatar" src="https://zhannahz.github.io/images/avatar.png?v=1674661221281" alt="">
+  </a>
+  <h1 class="site-title">
+    系统设计学
+  </h1>
+  <p class="site-description">
+    用游戏研究系统、用系统研究过程。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          目录
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          话题
+        </a>
+      
+    
+      
+        <a href="https://zhannahz.github.io/post/about-me" class="menu">
+          关于作者
+        </a>
+      
+    
+      
+        <a href="https://hannahz.me/work" class="menu" target="_blank">
+          视觉作品 [→
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/zhannahz" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/hannahzengtx" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="current-tag-container">
+            <h2 class="title">
+                标签：# Opinion
+            </h2> 
+        </div>
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://zhannahz.github.io/post/believable-ai-in-openworld/">
+        <h2 class="post-title">在开放世界中设计可信的AI（一）</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2023-01-25
+        </span>
+        <span>
+          10 min read
+        </span>
+        
+          <a href="https://zhannahz.github.io/tag/opinion/" class="post-tag">
+            # Opinion
+          </a>
+        
+          <a href="https://zhannahz.github.io/tag/ItyJ_JpLn/" class="post-tag">
+            # GameDesign
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        <h2 id="设计目的">设计目的</h2>
+<p>设计出“活生生“的AI NPC应该从情感和体验出发，比起单纯为战斗而设计的NPC，在大世界中的AI NPC应服务于以下需求：</p>
+<ol>
+<li>
+<p><strong>提供个人化的反馈</strong></p>
+<ul>
+<li>识别玩家的表达：玩家确认了自己的存在，加强世界的真实感</li>
+<li>认同玩家的表达：玩家感觉自己的选择被接受了，也会更认同一个接纳了自己的世界</li>
+</ul>
+</li>
+<li>
+<p><strong>打造可信的角色</strong><br>
+玩家以世界观和剧情为抓手，合理化NPC的生成行为。反过来，这些行为也提醒和印证前者。</p>
+</li>
+<li>
+<p><strong>补充叙事碎片</strong><br>
+在 scripted behavior 和写死的剧情之外填充叙事细节，避免大世界里空荡荡的鬼气。</p>
+</li>
+<li>
+<p><strong>允许多途径完成任务</strong><br>
+只要是人，就有多种与其周旋的方式。AI NPC 能集成多个路径到自身的行为反馈系统中，给玩家完成任务扩增可能性空间。</p>
+</li>
+</ol>
+<h2 id="ai-组成模块">AI 组成模块</h2>
+<p>首先明确模块具体数据应从角色形象设计、角色背景故事设计而来，做到有据可考。<br>
+其次，需要提前划分这些模块是固定的还是发展的。固定的模块不会改变其出厂设置，而发展的模块意味着在大世界中新的事件可能推动模块的变化。</p>
+<h3 id="信念决定行动原则">信念：决定行动原则</h3>
+<p><strong>外在信念</strong><br>
+即角色的<strong>立场</strong>。立场可以有多个：</p>
+<ul>
+<li>隶属哪个社会/政治/宗教组织</li>
+<li>是什么社会阶层</li>
+<li>职业（社会职业和家庭角色）</li>
+</ul>
+<p>NPC 应当做出符合信念的行动，例如遵循门派规矩、说符合职业的话、维护自己认同的团体。</p>
+<p><strong>内部信念</strong><br>
+也可以称为人格。表现为该 NPC 的行事风格。<br>
+如暴力主义主张暴力解决冲突，和平主义相反；<br>
+风险厌恶的 NPC 应当优先选择被动、趋利避害的行为，反之则会在同一场合选择冒风险的行为。</p>
+<h3 id="愿望决定行动目的">愿望：决定行动目的</h3>
+<p>愿望可以着眼三个方面</p>
+<ul>
+<li>
+<p>继承集体愿望（依据信念）<br>
+这一集体指的是角色抱有信念的集体。例如继承医者的愿望：救人。</p>
+</li>
+<li>
+<p>承担剧情/玩法任务<br>
+例如在一个短期的支线任务中，一个复仇者的愿望就是复仇对象得到惩罚。</p>
+</li>
+<li>
+<p>继承基本欲望</p>
+<ul>
+<li>生存欲望：趋暖、保存体力、避开生命危险</li>
+<li>社会欲望：趋美人、好钱财</li>
+<li>探索欲望：留意感兴趣的事物（依据信念和记忆）</li>
+</ul>
+</li>
+</ul>
+<h3 id="知识可以-access-的数据和交互选项">知识：可以 access 的数据和交互选项</h3>
+<p>对于一部分重要 NPC，知识模块可能根据情景变动。大多时候，知识权限应当是不变的，或者分阶段解锁。</p>
+<h3 id="感知视听以及其他作弊读取的信息">感知：视听，以及其他“作弊”读取的信息</h3>
+<p>通常AI视觉、听觉能提供绝大部分局部感知所需要的信息。</p>
+<p>全局感知则包括大世界的状态变化：</p>
+<ul>
+<li>社会：所属团体的状态数据，相关联角色的状态数据，以及玩家的数据（这一点在后文 Barking 中展开）</li>
+<li>环境：天气、天色</li>
+</ul>
+<h3 id="记忆经过筛选后的感知信息预备表达的信息">记忆：经过筛选后的感知信息，预备表达的信息</h3>
+<p>记忆模块对于表达非常重要，直接决定了 AI 行为能展现的信息量。</p>
+<p>记忆原则可能依赖于信念模块（更高概率记住对自己有利的信息。）</p>
+<h3 id="表达唯一一个玩家能直观感知到的模块">表达：唯一一个玩家能直观感知到的模块</h3>
+<p>从表达方式，可以分为</p>
+<ul>
+<li>自然语言表达：通常是基于写定的语料库或生成的较长的完整语句，也包括剧情中的台词。</li>
+<li>行为语言表达：包括 barking</li>
+<li>间接表达：物件、任务、事件</li>
+</ul>
+<p>从表达内容，可以分为</p>
+<ul>
+<li>信念表达</li>
+<li>愿望表达</li>
+<li>感知表达</li>
+<li>记忆表达</li>
+</ul>
+<p>那么如何表达？一个可信的 NPC 不会初次见面就报菜名一样把自己的数据抖给玩家看。我们需要研究更自然、自主的表达策略。</p>
+<h2 id="ai-的行为表达">AI 的行为表达</h2>
+<p>表达模块的目的是通过行动呈现一个能及时获取信息（感知模块）、理解（信念 &amp; 知识模块）信息、回忆信息（记忆模块）的角色。</p>
+<h3 id="barking认识-认出然后喊出来">Barking：认识、认出，然后喊出来</h3>
+<p>《奥秘》设计了一套基于程序生成的对话系统，类似的设计还有《中土之影》；并非程序生成但通过巨量文本达到类似效果的有《神界原罪》。这样的系统需要专用的数值，例如一个物件的恐怖指数。部分数值可以从实用数值直接挪用。</p>
+<p>以《奥秘》为例，我们简单分为<strong>情景生成</strong>和<strong>记忆生成</strong>。[1]</p>
+<p>情景生成对话中，发言优先级如此递减：</p>
+<ul>
+<li>NPC认出玩家物品：如认出随从并根据种族偏好和个人性格发言</li>
+<li>认出玩家状态：如是否施法变形</li>
+<li>认出玩家属性：如外貌和职业</li>
+<li>认出世界状态（白天/黑夜）</li>
+</ul>
+<p>识别环境不仅增加NPC的行为可信度、传递关键游戏信息，还让玩家感觉到自身的「存在确认」，同时有辅助叙事的作用，例如用个人行为反应社会阶层和风尚。</p>
+<p>记忆生成依赖 NPC 所记住的历史互动记录：</p>
+<ul>
+<li>NPC是否曾经和角色互动过</li>
+<li>好感度系统</li>
+</ul>
+<p>值得一提的是，由于这类好感度/声誉系统通常由许多对玩家并不透明的数值同时调控，这种不透明性容易造成玩家的困惑和不公平感。因此，当玩家做了直接影响好感度的事，最好通过 barking 或其他非实时的手段（比如NPC来信或公告板）告诉玩家。</p>
+<h3 id="positioning-在正确的时机站在正确的位置">Positioning: 在正确的时机站在正确的位置</h3>
+<p>Positioning 不仅是找到一个合适的位置，也包含移动（moving）的过程，同时，躲避（dodging）也是站位的一种。恰当的 positioning 既是让 AI 不显呆的手段，也能承担角色塑造和叙事功能。</p>
+<p>但是，AI 应该何时移动？按移动时机，可以简单地分为<strong>条件反射移动</strong>和<strong>主动移动。</strong></p>
+<p>对于条件反射的情况，主要是：</p>
+<ul>
+<li>不靠近危险源头，或远离被提前标记为不能靠近的区域</li>
+<li>躲避无法应对的突发危险</li>
+<li>站在跟随对象后方</li>
+<li>站得靠近熟识/亲近的对象</li>
+</ul>
+<p>对于主动移动，又分为短线和长线。</p>
+<p><strong>短线：</strong></p>
+<ul>
+<li>
+<p>衔接行动</p>
+<p>例如，NPC 遇到可以应对的突发危险，移动到解决方案（物件或角色）附近。<br>
+这里可以引入其他行为接口，例如用提前写定的行为或利用游戏内的生成式系统解决危险（例如水扑灭火），也可以是走进玩家呼救。</p>
+</li>
+<li>
+<p>准备演出站位</p>
+<p>站位对于演出至关重要。因此，需要人工设置能辅助 AI 站位的参考锚点，保证在需要时达到正常演出效果（如一次多方向夹击）和信息清晰度（如战斗状态下的敌人AI调整自身位置以始终呆在玩家屏幕内。）</p>
+</li>
+</ul>
+<p><strong>长线：</strong></p>
+<ul>
+<li>
+<p>出行表：以一天为单位安排出行（每个目的地都应该有意义）</p>
+<p>例如一个包子铺老板，5点到店铺做包子，7点客人来了开张卖包子，下午6点关店去邻居家串门，晚上呆在家里。</p>
+</li>
+</ul>
+<p>这些 Positioning 策略配合 Barking 使用能增强玩家眼中 AI 行为的意图性。</p>
+<h3 id="ambiance自然的待机状态-3">Ambiance：自然的待机状态 [3]</h3>
+<ul>
+<li>肢体语言：
+<ul>
+<li>整理自己、自言自语</li>
+<li><strong>视线</strong>看向变化源头或玩家</li>
+</ul>
+</li>
+</ul>
+<h3 id="mood从情绪emotion到心情mood4">Mood：从情绪（emotion）到心情（mood）[4]</h3>
+<p>情绪是短线状态，心情是长线状态。</p>
+<p>情绪生产源头来自对事件的判断，大致分为：</p>
+<ul>
+<li><strong>对事件后果的判断</strong>
+<ul>
+<li>所有事件：喜悦 / 不喜</li>
+</ul>
+</li>
+<li><strong>对角色行为的判断</strong>
+<ul>
+<li>自己的行为：自豪 → 满足 / 惭愧 → 后悔</li>
+<li>其他角色（包括玩家）的行为：欣赏 → 感谢 / 责备 → 气愤</li>
+</ul>
+</li>
+<li><strong>对物件的判断</strong>
+<ul>
+<li>熟悉物件：喜欢 / 厌恶</li>
+<li>不熟悉的物件：喜欢 / 厌恶</li>
+</ul>
+</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://zhannahz.github.io/post-images/1674660611445.png" alt="" loading="lazy"></figure>
+
+      </div>
+    </article>
+  
+</div>
+
+        <div class="pagination-container">
+  
+  
+</div>
+
+        <div class="site-footer">
+  <a href="https://github.com/getgridea/gridea" target="_blank">Powered by Gridea</a>
+  <a class="rss" href="https://zhannahz.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

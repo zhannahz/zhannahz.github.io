@@ -1,0 +1,247 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>动视面试：关卡方向 | 系统设计学</title>
+<link rel="shortcut icon" href="https://zhannahz.github.io/favicon.ico?v=1674661221281">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://zhannahz.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="动视面试：关卡方向 | 系统设计学 - Atom Feed" href="https://zhannahz.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138325172-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-138325172-1');
+</script>
+
+
+    <meta name="description" content="Activision Blizzard 九月来了我校 Career Fair，我因此得以直接和 HR 聊天，聊得开心，HR后续打了几个电话和我沟通职位意向。我意识到她主要是给动视的使命召唤系列来招人时，心里已经咯噔一下。
+动视代表作是使命召..." />
+    <meta name="keywords" content="interview,GameDesign" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://zhannahz.github.io">
+  <img class="avatar" src="https://zhannahz.github.io/images/avatar.png?v=1674661221281" alt="">
+  </a>
+  <h1 class="site-title">
+    系统设计学
+  </h1>
+  <p class="site-description">
+    用游戏研究系统、用系统研究过程。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          目录
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          话题
+        </a>
+      
+    
+      
+        <a href="https://zhannahz.github.io/post/about-me" class="menu">
+          关于作者
+        </a>
+      
+    
+      
+        <a href="https://hannahz.me/work" class="menu" target="_blank">
+          视觉作品 [→
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/zhannahz" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/hannahzengtx" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              动视面试：关卡方向
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-09-26
+              </span>
+              <span>
+                10 min read
+              </span>
+              
+                <a href="https://zhannahz.github.io/tag/iKIn9lFh_/" class="post-tag">
+                  # interview
+                </a>
+              
+                <a href="https://zhannahz.github.io/tag/ItyJ_JpLn/" class="post-tag">
+                  # GameDesign
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>Activision Blizzard 九月来了我校 Career Fair，我因此得以直接和 HR 聊天，聊得开心，HR后续打了几个电话和我沟通职位意向。我意识到她主要是给动视的使命召唤系列来招人时，心里已经咯噔一下。</p>
+<p>动视代表作是使命召唤系列，这个系列包含单机、多人大逃杀等种类，但都是FPS玩法。而我非但不玩使命召唤这个IP，而且类似的游戏有深度玩过的只有《守望先锋》和《永劫无间》——而这两个游戏在体验上都和使命召唤差得很远。面试还有一周不到，我决定云一下，看了一些使命召唤系列的直播视频。</p>
+<p>正式面试前 HR 转告我有工作室对我感兴趣，但希望知道为什么我先前的工作在 UI Designer 上这回确申请Level Desiger，我从 [1] 技能的可转移性和 [2] UI vs. Level 在设计玩家体验上的能动性和可能性两个角度回复了一封不长不短的邮件。然后接到 InfinityWard 工作室的面试通知。来面试我的是一个Lead Designer，一个Level Designer。</p>
+<p>以下是我能记起的面试内容，从英文意译成中文。</p>
+<p>以下是大致面试流程。</p>
+<hr>
+<h3 id="热身问题">热身问题</h3>
+<p>Lead Designer: 看了你的简历，让我们印象很深。说说你对使命召唤系列的了解？<code>（开局暴击）</code></p>
+<p>我：诚实地说我没有玩过这个系列，但会看游戏视频。其他类似游戏还玩过 blablabla</p>
+<p>Lead Designer: OK…okay. （语气惊讶）我们先从你为什么想做关卡设计师开始聊吧，说说你对这个职位的理解。</p>
+<p>我：关卡设计通常在一个游戏的机制敲定以后展开，主要任务是探索机制的玩法空间、保持机制的平衡。像从已有的词汇表里组句子。比起像是系统设计的工作，我认为关卡设计是真正让静态的规则互相干预的环节，玩家的动态的体验都在关卡中发生。对FPS游戏来说，就是当游戏的核心体验目标（比如生存）、主要对抗方式（比如多对多大逃杀）、武器的设计（距离、精度这些影响跟枪空间和玩家安全距离的要素）等等敲定后，关卡设计负责设计各种场所，让这些规则被最好地利用。</p>
+<h3 id="横向对比这个和那个">「横向对比这个和那个」</h3>
+<p>Level Designer: 你提到你玩过《守望先锋》，这是个和COD（使命召唤）很不一样的游戏，你说说在关卡上两者有什么不同。</p>
+<p>我：拿使命召唤系列里竞技（吃鸡类）的作品比较。<br>
+1）首先是游戏内玩家角色的设计不同，导致了地图的服务对象不同。<br>
+虽然都是远程对抗，《守望先锋》里玩家可以选择不同英雄，这些英雄各自有特长技能和移动方式，那么地图就需要在每个角落都考虑到不同英雄是否能发挥自身的用处、特定地形是否偏向让某类英雄发挥得更好/更差；而使命召唤系列作中没有英雄一说，每个玩家都有同样的出生角色。FPS地图设计很大程度就是设计玩家的安全 - 危险这个度的平衡，sightline（视线）是影响这个平衡的重要因素。对使命召唤系列，地图设计更多是考虑对每个玩家都适用的 sightline、平台的 elevation（高度），而《守望先锋》里需要考虑更多变数。<br>
+2）因为游戏内对输赢的规则制定不同，设计师想让玩家形成的空间记忆不一样。<br>
+《守望先锋》通常把玩家分成两队，给两队对抗的目标（比如一攻一守）和对称的路径。使命召唤系列里也有队伍，但不强调队和队的对抗，而放大了1对1的高节奏对抗，重 tactic 轻 strategy；因此玩家也会有更多的 backtracking，走回头路去找敌方对抗的情况。这这让使命召唤系列在地图设计上不会有明显的两头对称，更看重单人玩家能否很好地 traverse 地图而不觉得重复。</p>
+<p><code>（后视之明：但是两个游戏都利用了资源点的分布来更好地预测玩家的动线。）</code></p>
+<p>Level Designer: 我基本同意你说的，你给了一个好回答。</p>
+<p>Lead Designer:（按耐不住）我还是想知道为什么你一直没有玩过使命召唤，这个系列有一个游戏是免费的，你完全可以下载打两局，我理解大学很多事情你有课、朋友、or whatever，但是玩过游戏对于关卡设计是很重要的，尤其是对于 COD 这样成系列的 franchise。你参加 game jam 或者用游戏引擎的商城资源也可以做 FPS demo 啊？</p>
+<p>我：<code>（我知道啊啊啊啊）</code>我明白，这是我做得不足的地方。首先，我今年开始参加 jam，并且一贯以设计兼程序的角色参加，以学习游戏的运作模式为目的，因此大部分时候做的是2D游戏<code>（理由牵强）</code>；同时，我也相信有设计视角的游戏经验是最宝贵的，即便我玩得非常少，我的技能可以让我在之后更快地从游玩中提取信息。比起仅仅是爱好者的玩家，我对游戏的兴趣是长期而且设计驱动的。</p>
+<p>Lead Designer: 我指出你没有玩COD这一点并不是否定你的能力，只是玩游戏通常会让你成为更好的设计师。<code>（对不起。我最喜欢的游戏都不落在FPS类里。）</code></p>
+<p>我：（点头）</p>
+<h3 id="提出一个新点子">「提出一个新点子」</h3>
+<p>Lead Designer: 我有一个很具挑战的问题。使命召唤系列存在很久了，不少老玩家认为我们的地图关卡特别公式化，没有新意；如何在地图的设计上引入新东西？我知道这个问题很难，所以不要有压力。</p>
+<p>我：<code>（这里开始胡说）</code><br>
+公式一定是有好处的，但玩家觉得重复应该是因为即便视觉风格不同，但是每个地图的建筑体可能有什么功能是 carried throughout the franchise 的，所以没有惊喜感。<br>
+我个人单机游戏玩得多，尤其是魂类游戏。虽然魂类和FPS游戏的设计目标完全不同，但两类游戏都是非常强调让玩家在复杂空间中导航、找到目标，因此在地图设计上或许有可以借鉴的地方。比如说，魂类游戏喜欢使用单向门来在关卡结束后提供一个回到先前地图的捷径，增加区域的连通性。而FPS游戏为了保持空间的clarity，不太会有需要钥匙打开的门这样的设置。在FPS对抗里引入单向门意味着掌握钥匙的人能更快地在区域之间穿梭，得到钥匙也成为一个资源竞争点，既有可能加速优势方的积累，也可能提供给劣势方翻盘的机会。<br>
+Lead Designer: 我理解你的意思。不过我们的玩家已经熟悉了这一套模式，要引入像你说的机制肯定遭到反弹。而且FPS有自己长期的工业标准，新的东西不容易出现。你觉得把这个机制融合进游戏的难点主要在哪里？<br>
+我：明白。难点主要是设计师可能很难控制游戏节奏，并且需要考虑隐藏的通路，这个在设计时在哪里摆放对平衡的影响是理想的。单向门在单机中可以看作一个划分区域的 separator，在多人对抗的情形里可以用作一个 exclusive 的 control point；后者其实在FPS这个题材并不少见。</p>
+<h3 id="能力与预期的对齐">能力与预期的对齐</h3>
+<p>Level Designer: 你辅修建筑，所以你会建模软件？<br>
+我：SketchUp, Blender 目前用得多一点。</p>
+<p>Level Designer: 你认为关卡设计在具体工作中会做些什么工作？<br>
+我：我估计的具体流程是——初期我的工作可能只会是设计一个大地图里的小部分，那么首先明确这个部分在整个地图中的位置（离出生点或者资源点多近，地形上在哪里）和作用。比如如果是吃鸡类，我做的这个地点是不是阻塞点，还是说过渡区域或者安全区；如果是单机，也需要考虑关卡对剧情的推进作用和教学功能，然后根据这些目标画图，画图的时候要依据团队制定的设计系统来做好视觉标注，比如尺度、比如cover可能会根据全cover还是半cover有颜色上的区分等等。之后就是大量的测试和迭代。</p>
+<p>Lead Designer: 我有最后一个问题。你的简历说明你背景非常丰富，你显然有其他选择，也不一定非得做游戏。如果你来使命召唤做关卡设计，今后很长一段时间都会在同个系列、同种类型的地图上工作，这是个很窄的工种。你觉得自己能从中获得满足感吗？还是说你对游戏的兴趣更像是想应用一下自己的知识和技能？<br>
+我：（被直白的提问惊到）我理解大的作品里每个职位需要非常专精于自己的工作。我认为我做好了在关卡设计上前进的准备。假设我留在美国，可能1～3年内都是偏执行的工作，落地他人的想法，再往后能够独立负责小区域的设计，再往后负责新地图的设计。长期来看，经过这些磨合，我希望真正理解游戏的建成过程，拥有制作人的视野。我认为这个是合理的学习路径。<code>（并没有）</code></p>
+<p>我虽然做研究类的工作，但这都让我能以更robust、更新的视角看待游戏设计这件事。我绝不是仅仅想应用一些理论化的东西到实践中去，我非常享受和需要设计实践本身。<code>（我应该争论说，本校不提供游戏专业和任何游戏业资源的情况下，我能参赛和自学游戏设计这件事已经是一个铁的证明）</code></p>
+<h3 id="反问环节">反问环节</h3>
+<p>最后，一个小时剩了十分钟不到：</p>
+<p>我问了对方我魂类那道问题，对方是怎么想的<code>（忘了对方的回答，好像说这个问题是比较难，主要考察思考路径）</code>；又提了一次我COD没玩的问题，对方说从工作室团队合作的角度考虑，他们看重对COD系列本身的热情；对方也提到Game Jam虽然可以做精美的艺术游戏，但是公司的目标是触达最多受众，建议新人也多做有行业标准的游戏demo。</p>
+<h2 id="相关文章">相关文章</h2>
+<p>回到文章<a href="https://zhannahz.github.io/post/becomingGameDesigner/">「科学工作者走向游戏设计的野路」</a></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E7%83%AD%E8%BA%AB%E9%97%AE%E9%A2%98">热身问题</a></li>
+<li><a href="#%E6%A8%AA%E5%90%91%E5%AF%B9%E6%AF%94%E8%BF%99%E4%B8%AA%E5%92%8C%E9%82%A3%E4%B8%AA">「横向对比这个和那个」</a></li>
+<li><a href="#%E6%8F%90%E5%87%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%82%B9%E5%AD%90">「提出一个新点子」</a></li>
+<li><a href="#%E8%83%BD%E5%8A%9B%E4%B8%8E%E9%A2%84%E6%9C%9F%E7%9A%84%E5%AF%B9%E9%BD%90">能力与预期的对齐</a></li>
+<li><a href="#%E5%8F%8D%E9%97%AE%E7%8E%AF%E8%8A%82">反问环节</a></li>
+</ul>
+</li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E6%96%87%E7%AB%A0">相关文章</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  <a href="https://github.com/getgridea/gridea" target="_blank">Powered by Gridea</a>
+  <a class="rss" href="https://zhannahz.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

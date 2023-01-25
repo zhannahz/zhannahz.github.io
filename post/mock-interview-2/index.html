@@ -1,0 +1,277 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>模拟面试之二：关卡方向 | 系统设计学</title>
+<link rel="shortcut icon" href="https://zhannahz.github.io/favicon.ico?v=1674661221281">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://zhannahz.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="模拟面试之二：关卡方向 | 系统设计学 - Atom Feed" href="https://zhannahz.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138325172-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-138325172-1');
+</script>
+
+
+    <meta name="description" content="(第一场模拟面试是一位从事系统策划的朋友，但是隔的时间久，遂放弃逐字记录。)
+以下是由一位就职于某国产策略类游戏的关卡策划老师主持的模拟面试。受益匪浅。
+途中我将用代码体标明
+1）我的后视之见。
+2）这位老师为我做的复盘。实际上是大部分是最..." />
+    <meta name="keywords" content="interview,GameDesign" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://zhannahz.github.io">
+  <img class="avatar" src="https://zhannahz.github.io/images/avatar.png?v=1674661221281" alt="">
+  </a>
+  <h1 class="site-title">
+    系统设计学
+  </h1>
+  <p class="site-description">
+    用游戏研究系统、用系统研究过程。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          目录
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          话题
+        </a>
+      
+    
+      
+        <a href="https://zhannahz.github.io/post/about-me" class="menu">
+          关于作者
+        </a>
+      
+    
+      
+        <a href="https://hannahz.me/work" class="menu" target="_blank">
+          视觉作品 [→
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/zhannahz" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/hannahzengtx" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              模拟面试之二：关卡方向
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-10-09
+              </span>
+              <span>
+                17 min read
+              </span>
+              
+                <a href="https://zhannahz.github.io/tag/iKIn9lFh_/" class="post-tag">
+                  # interview
+                </a>
+              
+                <a href="https://zhannahz.github.io/tag/ItyJ_JpLn/" class="post-tag">
+                  # GameDesign
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>(第一场模拟面试是一位从事系统策划的朋友，但是隔的时间久，遂放弃逐字记录。)</p>
+<p>以下是由一位就职于某国产策略类游戏的关卡策划老师主持的模拟面试。受益匪浅。<br>
+途中我将用<code>代码体</code>标明<br>
+1）我的后视之见。<br>
+2）这位老师为我做的复盘。实际上是大部分是最后才做的，但便于阅读比较，直接穿插文中。</p>
+<hr>
+<h3 id="自我介绍">自我介绍</h3>
+<p>老师：请你做一个自我介绍。<br>
+我：我是XXX, 在XXXX大学就读认知科学，辅修建筑，现在大三。之前有两段界面和交互设计的实习，不过希望往关卡设计的方向发展。参加过四次Game Jam，均是设计和程序的角色。最近在一个大学生团队做一个长线的项目。<code>（这里想停止，但意识到对方期望我说更多。）</code>……emm，最近在玩 Portal 2。</p>
+<p><code>【复盘】这里自我介绍短了，可以多说一点。另外如果提游戏要注意一定是自己熟悉的。</code></p>
+<p>老师：你学认知科学，对你做关卡设计有什么优势？<br>
+我：首先，认知科学研究的是人的认知和行动，在理解玩家的感知和体验上，我会有一个来自实验科学的扎实的知识基础，和从实践中验证和提出理论的习惯。第二，认知科学从方法论来说是一种研究系统的视角，也就是多层次地看待一个复杂的系统；比如大脑可以从语言学、心理学、计算机、神经科学这些进路分别研究，也需要互相转译。而游戏也是一个多层次、各层次彼此制约和彼此互动的系统；有名的MDA理论—Mechanics, Dynamics, Aesthetics—就是将游戏分为三个层级，帮助设计理解机制如何塑造动态的体验，还有体验中的美学价值。</p>
+<p><code>【复盘】这两个点都是可以说的，尤其是系统分层的点。提到MDA也是加分的。</code></p>
+<p>老师：看你简历之前做的UI设计实习比较多，为什么转关卡策划？<br>
+我：<code>（被问到很多次后已经出口就能回答）</code>嗯，虽然之前实习都是在互联网产品的UI设计工作，但我认为其中的可转移技能很多。一方面，UI设计并非是纯视觉设计，而是有强逻辑性的解决问题的设计，这涉及到和游戏设计相通的视觉信息组织、引导。另一个是我在接触项目中养成了在具体设计模块前建立设计系统的习惯，设计系统在UI领域是根据交互需求整理出的可以复用的模块，相当于给自己定下的设计规则，也方便团队沟通和后续维护；这在游戏设计里就会是根据核心机制和设计目标（比如玩家的移动速度、角色属性等等），提前定好各个物件（比如体块、道具、怪物AI等等）的视觉规范、流程规范。</p>
+<p><code>【复盘】这些理由都很有说服力。第二点可以直接点出这个信息组织和关卡设计中的白模操作是一回事。面试过程里，考察关卡策划的一个核心是你是否能围绕玩家体验去思考。所以你也可以在概括的时候多提及为体验而设计是一个共通的能力。</code></p>
+<p>老师：你怎么理解关卡设计的工作？<br>
+我：关卡设计是在系统给定机制以后，理解和利用这些机制，根据具体的设计目标组合机制、做谜题和挑战的工作。这里的目标包括教学目标、叙事目标。关卡策划是直接塑造动态体验的角色。</p>
+<p><code>【复盘】要点是围绕塑造玩家体验。另外关卡是要做机制的，核心玩法是系统策划的工作，但是关卡内的道具、敌人行为、甚至技能很多时候都有关卡参与。</code></p>
+<p><code>这里我认为有公司项目的不同，也有我表述的问题。我表述上混淆了「玩法」和「机制」；涉及界定游戏类型的机制、定义核心循环的属于玩法，一定是系统的工作，但关卡内或许有额外的小机制。问了几位在美国的关卡设计师得到的回答是大公司的关卡更有可能完全不碰机制设计，专注于具体空间和挑战；关卡可能会给机制提案，但是后续完善和敲定肯定是game designer（对应系统、数值策划）的工作，比如《耻辱2》中的Clockwork Mansion中的模块化建筑移动属于关卡设计师提出、整个团队操刀，但即便这样也非常少见。</code></p>
+<h3 id="具体游戏具体分析">具体游戏具体分析</h3>
+<p>老师：接下来我问一下具体的游戏；首先这个环节没有标准的答案，我的答案只能是参考。主要是考察思路。<br>
+你说最近你玩了传送门2，那它核心的机制比较少，就是传送门的建立，传送门2是怎么做到不让玩家感觉重复的？<br>
+我：1. 从叙事体验上说，因为传送门2是个对前作传送门的继承，对玩过前作的玩家来说在机制教学上增加了更多的小叙事。比如前四五个关更像前作的复习，然后很快在叙事上转折，开始引入新机制。 2. 从关卡说，每关都在传送门这个核心机制上配合了通常是1～3个其他的机制，比如传送带、激光、跳板等等，虽然绝对数量少，但是组合起来按组合学的问题算，也可以得出很多变化。<code>我的实际表述更乱。其实第一点比较擦边。</code></p>
+<p><code>【复盘】你说的一个是叙事&amp;情感体验上的设计，这个没问题但是不是很关键。关卡上其实就是核心机制简单直接但是关卡内有很多小机制穿插到主机制的使用里。这些模块化的小机制都可以拆开来重新组合，机制的可能性就大大增加了。</code></p>
+<p>老师：传送门2如果要做个多人模式，最多支持4个人，你会怎么做？<br>
+我：嗯，我想想。我直接把思路说说看吧。首先传送门是个单人解谜游戏，它强调这种空间推理和分析思考；通常进入一个关卡前，玩家有机会纵览全局，一下子看到出口或者出口标牌在哪里。不管关卡空间有多复杂，给玩家的目标很明确，信息都尽可能给在屏幕上。<br>
+如果多人，核心体验也依然应该是解谜。多人解谜第一个问题是多个玩家之间如何交流信息。做语音肯定是不合适的。那么可以从视角上解决：《双人成行》中分屏的解决方案可以参考，同时一个玩家脱离其他玩家视野的时候，可以通过轮廓高亮来指示对方的位置。机制上可以采取两人一队，队与队对抗的模式，队内一人拿一个颜色的传送门，强调合作的必须。<br>
+对抗的规则上，有几种方法。一是计时解谜，但这个不顺承游戏的核心体验（思考、分析），不那么合适；二是在每个关卡内，设置有排他性的谜题，意思是当一队完成时，另一队无法同时完成；这可能需要一个对称的地图，让两边会在固定几个点相遇。比如一队先解出了一个控制点，比如是个可移动的平台，另一队就不能走这个路。此外，可以加入一些轻度的直接对抗，比如对角色造成伤害的激光枪以及可以转动激光射向的方块，也是一个可以被抢占利用的资源。<code>（然后我忘了我还说了什么，总之更多的是分析问题和提出思路）</code></p>
+<p><code>【复盘】传送门2实际是有一个多人模式的，里面玩家的交流是类MMO游戏的这种实时信号标记。这完全足够多人的沟通，所以我并不同意你说的第一点。另外你说的视角问题是可以的，不过玩家看不到队友的视角，还可以说能怎么利用这一点来做谜题。2-2对抗也是可以的，包括你说的类似FPS这种抢旗规则，还有激光枪这些具体的例子都可以说的。总体上这个问题回答得还不错。这类问题主要是考验脑子好不好用，能不能临场发挥。这种基于一个具体游戏改进的问题，都可以采用分析游戏特点 -&gt; 拓展具体机制 -&gt; 确定想要达成的体验，然后从体验再推机制这个思路。</code></p>
+<h3 id="简历针对性提问">简历针对性提问</h3>
+<p>老师：介绍你在Global Game Jam做的这个平台跳跃游戏，你说有「平台功能两用和一关多地形」。<br>
+我：<code>（我简历中这一行的描述是：带领团队制作2D平台动作游戏，机制为平台功能两用和一关多地形，负责关卡策划）</code><br>
+Jam题目是duality，因此我们做的方向是在一个2D横版平台的布局外再加一层隐藏的平台层，相当于前景-后景关系。后景是不可见的。人物基础移动和跳跃外有一个特殊机制，是一个能照亮隐藏的后景平台的探照灯。平台被照亮时会激活，激活时可以有刚体碰撞，玩家能踩、用来穿越障碍，平台有碰撞体可以挡住有弹道的东西，比如我做了一个风扇的机关，有两个吹玩家的方向，平台就可以用来挡住风。具体过关时，探照的时机很重要，所以解谜之外还对动作反应有一点要求。</p>
+<p>老师：探照灯这个机制如果我改成直接操控平台本身，你觉得有什么不同？<br>
+我：<code>（想到了无数直接操控平台的小游戏。但是卡住了一下。）</code> hmm 操控平台和探照灯会是完全两种不同的交互模式，玩家键盘移动，探照灯是鼠标释放一个圆形范围，照到才能触发平台，移走就失活，这个更强调即时的控制；如果是平台操作，在认知负担上会增加，关卡的设计也需要考虑到更多的 edge cases，比如玩家操控的平台会不会直接碰撞其他物体、会不会造成玩家多次使用平台的隐现来达成左脚踩右脚过关的情况。如果做成平台操控，可能还会需要增加其他的限制，比如操控一个平台时不能完成其他动作。<code>（这里我的回答是往「如果变成新机制会怎么样」，但对方希望考察的是「你做的机制的合理性」）</code></p>
+<p><code>【复盘】这个问题问的实际上是你机制的不可替代性。灯只有一个固定的圆形范围，但平台是什么时候能操控，玩家可以操控多个平台吗？操控的角度、范围、操作上的认知负担都是可以说的。不应该从关卡的设计难点上说。</code></p>
+<p>老师：说说简历上你玩了很久的艾尔登法环。法环的BOSS有多阶段，为什么这么设计？如果我把一个BOSS的两个阶段拆成2个BOSS，有什么不一样？<br>
+我：不仅是法环，大多ARPG的Boss都是多阶段。你是说就法环而言，还是任何游戏的多阶段Boss?<br>
+老师：都可以。<br>
+我：1. Boss的二阶段可以起到丰富角色的叙事作用 2. 引入新的战斗节奏和变化，激励玩家改变战斗策略，比如葛孚王二阶段的抱投、踩地需要和第一阶段不同的应对模式，要拉开距离、看准时机跳跃。魂系玩家喜欢背板和Boss的过招，这种节奏变化可以减少重复感。<code>（背板这个纯属瞎扯*）</code>3. 一个Boss的多阶段和多个单阶段Boss的体验完全不同。如果拆成两个Boss，会传达一个错误的信息，玩家会觉得自己在打一个新的敌人。反之，玩家会把两个阶段看作一个问题去解决，第一阶段过去了第二阶段过不去，会觉得自己是不够了解Boss，而不是单纯归结于自己续航不足。</p>
+<p><code>【复盘】叙事这个点可以答但不是很重要。战斗上可以举例艾尔登之兽，你突然从一个人形Boss变身成巨型兽，而且行动模式也完全没有联系，实际效果是给玩家很强的割裂感，造成烦躁。回答应该围绕设计给了玩家什么反馈，这个反馈有没有造成负面体验。还有就是Boss作为检验玩家游戏理解的节点。比如前期Boss噩兆有两阶段，但第二阶段变化不大，压迫性更强；它就是初期检验玩家对和敌人过招的理解，如果你拆成两个，就成了两个节点，你打过了第一个没打过第二个，玩家就觉得第一个节点是合格的，这个给玩家的认知是不同的。</code></p>
+<p><code>这里我意识到我前几个问题并不是完全没有答到，但是表述上不够简洁有力，缺少结尾的归纳总结，即便想对了，面试官不一定能感知到。</code></p>
+<p>老师：你玩Rogue类游戏也多，你说说《杀戮尖塔》和《哈帝斯》的局内和局外成长有什么不同。<br>
+我：<code>这题也犯了说话条理不足的问题，有一两次说得太快，磕巴了几句，也没有分条列点。</code> 局内，《尖塔》的成长主要体现在 1）卡组的收集、变更、去除 2）遗物这类长期局内buff和道具这类短期buff。这两点都是以多样的策略可能来平衡随机性可能带来的失去控制感。另外，随机事件和道具都可能引起血条的变化，在一局内，玩家需要动态调整策略，平衡短期快速打完伤害在一场战斗内生存 vs. 长期保存血量这两个目标。局外，《尖塔》可以更换角色，实际是更换卡组的可能；另外，游戏内一个随机事件也造成局外影响，即你可以存一张卡给下一局的自己使用（再次遇到该随机事件时），本局就不能再用这张卡。这实际上不是资源的积累或者消耗，而是局外资源交换，也构成局内外目标的平衡。最后还有一个局外设定，是前一局如果玩家没有放弃，不管进度如何，下一局开始都可以有奖励选项，比如选择让前五个敌人血量为1，这让反复爬塔没那么痛苦，增加乐趣，提高重玩性。<br>
+《哈帝斯》的成长点更多：局内，有随机遇到的众神的buff，相当于《尖塔》的组build过程。局外，除了人人都知道的叙事推进，每局收集的资源（一个紫黑色的货币）可以用于属性提升；比如，到镜子前，用这个货币可以选择要么增加背刺伤害，要么增加遇敌前几秒的伤害，这也小幅度影响玩家的战斗风格。<code>忘记说解锁不同武器了。</code></p>
+<p><code>【复盘】局外成长的点都是对的，鼓励玩家继续打，实际是弱化负反馈、加强玩家的正反馈。说的时候可以慢一点，不要急，宁愿慢，如果有错句错字反而减分。</code></p>
+<p>老师：就《尖塔》在局和局之间增加激励这个点我们深挖一下。为什么这里做了奖励，为什么不是玩家放弃爬塔会给一个下一局的惩罚？<br>
+我：<code>这里还是想到了、没有说得更清楚的问题。</code> 这个奖励机制的作用是照顾反复失败的普通玩家，减少失败成本，鼓励反复尝试。《Shovel Knight》有一个类似设计，设计师想鼓励玩家不存档，第一次方案是把存档变成要花钱才能存，这属于惩罚。迭代以后改成了经过存档点自动存档，但玩家可以通过下劈劈碎存档点，获得货币，取消存档。高手玩家知晓这个技巧，这个机制就鼓励了这批人选择高风险高收获的不存档；普通玩家则能顺利存档。这类奖励机制可以照顾水平不同的玩家。<code>我应该补上说惩罚适用于保护玩家不作出破坏游戏体验的行为时才采用，避免危险操作，而非用于促进玩家学习某个规则。</code></p>
+<p><code>【复盘】我们说奖励总是优于惩罚。惩罚一个显而易见的问题是负反馈过强，造成玩家流失。《马里奥赛车》是个例子，它也有点特殊，因为是聚会游戏本就是要大家玩得开心而不是提供绝对公平的竞技环境，所以赛车时落后的玩家有buff，领先的玩家反而容易遇到debuff。</code></p>
+<h3 id="结束">结束</h3>
+<p><code>【复盘】总体良好，属于校招中有优势的水平。还有一年时间可以多加练习！此外，最好有长期的项目，demo要可玩。关卡编辑器做的关卡如果完成度高也是可以的。</code></p>
+<h3 id="个人总结">个人总结</h3>
+<ul>
+<li>表述可以更稳，不要慌乱</li>
+<li>能用行业用语强调的时候，尽可能这么做。否则有危险产出大段无效表述，不能反映实际想法。</li>
+<li>展现思路是重要的，作为关卡应当围绕玩家体验和设计目的来描述思路。</li>
+<li>做–项–目！</li>
+</ul>
+<hr>
+<h2 id="相关文章">相关文章</h2>
+<p>回到文章<a href="https://zhannahz.github.io/post/becomingGameDesigner/">「科学工作者走向游戏设计的野路」</a></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D">自我介绍</a></li>
+<li><a href="#%E5%85%B7%E4%BD%93%E6%B8%B8%E6%88%8F%E5%85%B7%E4%BD%93%E5%88%86%E6%9E%90">具体游戏具体分析</a></li>
+<li><a href="#%E7%AE%80%E5%8E%86%E9%92%88%E5%AF%B9%E6%80%A7%E6%8F%90%E9%97%AE">简历针对性提问</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F">结束</a></li>
+<li><a href="#%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93">个人总结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E6%96%87%E7%AB%A0">相关文章</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://zhannahz.github.io/post/becomingGameDesigner/">
+              <h3 class="post-title">
+                科学工作者走向游戏设计的野路
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  <a href="https://github.com/getgridea/gridea" target="_blank">Powered by Gridea</a>
+  <a class="rss" href="https://zhannahz.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

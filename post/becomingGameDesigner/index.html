@@ -1,0 +1,306 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>科学工作者走向游戏设计的野路 | 系统设计学</title>
+<link rel="shortcut icon" href="https://zhannahz.github.io/favicon.ico?v=1674661221281">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://zhannahz.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="科学工作者走向游戏设计的野路 | 系统设计学 - Atom Feed" href="https://zhannahz.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138325172-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-138325172-1');
+</script>
+
+
+    <meta name="description" content="记录和复盘本人长期的做游戏历程。
+让我们看看会发生什么吧。
+
+2021.9：开始准备
+正式开始准备思考如果不做认知神经科学或者科研之余，我能否独立做游戏。
+简单地自我评估：
+
+有个设计师的脑子：自学设计，有过两段 UI 设计的实习工作，虽然..." />
+    <meta name="keywords" content="GameDesign,Documentation" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://zhannahz.github.io">
+  <img class="avatar" src="https://zhannahz.github.io/images/avatar.png?v=1674661221281" alt="">
+  </a>
+  <h1 class="site-title">
+    系统设计学
+  </h1>
+  <p class="site-description">
+    用游戏研究系统、用系统研究过程。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          目录
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          话题
+        </a>
+      
+    
+      
+        <a href="https://zhannahz.github.io/post/about-me" class="menu">
+          关于作者
+        </a>
+      
+    
+      
+        <a href="https://hannahz.me/work" class="menu" target="_blank">
+          视觉作品 [→
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/zhannahz" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/hannahzengtx" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              科学工作者走向游戏设计的野路
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-10-01
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+                <a href="https://zhannahz.github.io/tag/ItyJ_JpLn/" class="post-tag">
+                  # GameDesign
+                </a>
+              
+                <a href="https://zhannahz.github.io/tag/qSzea8K6uJ/" class="post-tag">
+                  # Documentation
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>记录和复盘本人长期的做游戏历程。<br>
+让我们看看会发生什么吧。</p>
+<hr>
+<h2 id="20219开始准备">2021.9：开始准备</h2>
+<p>正式开始准备思考如果不做认知神经科学或者科研之余，我能否独立做游戏。<br>
+简单地自我评估：</p>
+<ul>
+<li><strong>有个设计师的脑子</strong>：自学设计，有过两段 UI 设计的实习工作，虽然非常喜欢我的团队（都是从产品角度挑战当前政治环境的产品），但非常厌倦 UI 的工作。普遍上，软件产品的设计缺乏挑战，而UI设计门槛低、能做的 impact 少。从这些经历的主要收获是对「设计系统」的理解。</li>
+<li><strong>多动症发展</strong>：我是朋友里出了名的课表看不出专业。能写代码，在学校选过数据结构和嵌入式系统的课。混迹音乐系三四门课，对声音比较敏感。做过平面和交互，审美不拖后腿。</li>
+<li><strong>对游戏有长期的、媒介层次的兴趣</strong>：不是玩家心态，不仅仅是因为「想重现某某游戏当年给我的体验」才想做游戏。向往解决复杂工程的过程和认识这样的团队。</li>
+</ul>
+<p>但是</p>
+<ul>
+<li><strong>身边游戏资源缺乏</strong>：学校没有相关专业，校友很少去游戏行业。</li>
+<li><strong>所学专业能直接应用到游戏的部分不多</strong>：主修认知科学（事件认知、注意力机制），辅修建筑。建筑系是也是出名地不教能找工作的技能，偏表达和概念化。</li>
+<li><strong>缺乏经验</strong>：游戏行业的技能很难在本科阶段培养，而且行业招人非常注重项目经验。</li>
+</ul>
+<p>当下就计划间隔一学期回国找机会，延迟毕业到24届。但心中仍有犹豫。</p>
+<h3 id="心路快把我人生里前十个垃圾游戏做完">【心路】快把我人生里前十个垃圾游戏做完！</h3>
+<p>开始参加各种短期高强度的游戏比赛，包括 Global Game Jam, Ludam Dare, InkJam, GMTK Jam。其中有两次比赛都是3人的固定队伍（3人都兼策划和程序。）</p>
+<h2 id="20228-建立信心">2022.8 建立信心</h2>
+<p>觉得参赛能给自己带来的成长有限，确定间隔计划。各种改简历投简历。发觉自己对游戏公司了解不足，遂恶补。</p>
+<h3 id="策划案练习练习拆解游戏和写案子">【策划案练习】练习拆解游戏和写案子。</h3>
+<p>写了一个 RogueLike 回合制游戏的策划案，从朋友的反馈里学到了不少系统策划的常识。意识到系统策划的基本要求我是满足的：逻辑性、抽象能力、总结和推断能力。我的实验科学教育让我对于顶层设计的任务相对严谨，同时注重事实。</p>
+<h3 id="开始怀疑">开始怀疑</h3>
+<p>系统策划重在写程序般的逻辑和语言表达。名字里带个「系统」，好听之余，其工作却容易落出游戏核心。尤其是前期系统策划主要参与的是非玩法类的系统，而是服务于用户留存的系统。<br>
+开始转学关卡设计。关卡策划重在有demo有画关卡plan的能力，因此是动手落地居多的。意识到拿得出手的游戏demo不够多，遂恶补。</p>
+<h3 id="关卡练习last-tour第一阶段">【关卡练习】《Last Tour》第一阶段</h3>
+<p>开始这个项目时看完《少女终末旅行》后非常喜欢里边有主题的空间，像《看不见的城市》，而好的关卡也通常有主题的变奏，用机制来支撑空间的复杂度 ← → 由机制展开空间。找朋友要反馈，demo 搁置。</p>
+<h2 id="20229-开始投递">2022.9 开始投递</h2>
+<h3 id="面试activision-level-designer-intern-挂了">【面试】Activision - Level Designer Intern → 挂了</h3>
+<p>具体记录见 <a href="https://zhannahz.github.io/post/activision-interview/">Activision 面试记录&amp;复盘</a></p>
+<h3 id="继续怀疑">继续怀疑</h3>
+<p>在一个小圈里说：</p>
+<blockquote>
+<p>有时候觉得自己真的受够了在game jam做小游戏。这种注定需要取巧的、有时候以“精巧”为借口来搪塞机制的浅显的小游戏。</p>
+<p>但是我们所知道的机制是那么少，我们习得的那些描述机制的语言那么少。</p>
+<p>做jam其实就是做练习题 我觉得没什么不好，但是真正做游戏是没有给定题目的。</p>
+</blockquote>
+<h3 id="笔试">【笔试】</h3>
+<p>虽然我属于2024届，但想熟悉招聘流程，投了几家公司的23届校招。<br>
+第一次做游戏策划笔试，体验很新鲜。</p>
+<h2 id="202210-继续">2022.10 继续</h2>
+<h3 id="长期项目开始筹备一个独立游戏">【长期项目】开始筹备一个独立游戏</h3>
+<p>提出的玩法方案在团队内投票通过，担任主策划。</p>
+<h3 id="面试模拟面试">【面试】模拟面试</h3>
+<p>约小圈内一位关卡策划老师为我模拟面试，十分感谢。见<a href="https://zhannahz.github.io/post/mock-interview-2/">模拟面试记录之二</a>。</p>
+<h2 id="202211">2022.11</h2>
+<h3 id="面试大厂系统策划实习">【面试】大厂系统策划实习</h3>
+<p>先项目组策划面试，三天后制作人面试，随后收到HR的口头 offer。<br>
+收到正式 offer。</p>
+<h2 id="202301">2023.01</h2>
+<h3 id="招募和干活继续干独游项目">【招募和干活】继续干独游项目</h3>
+<ol>
+<li>招人。谈的人越多，对项目的 image 越清晰了。遇到一位在职老哥，和我们分享了不少他自己的团队管理和管线开发经验。</li>
+<li>针对目前为止的策划案和我写的技术demo做了完整的战斗交互流程，发现在信息组织上有冗杂、不透明的问题，在玩法上上手门槛略高（体现在单步思考量较高，操作步数略多。）<br>
+遂在过年无聊（亲戚串门）期间优化。</li>
+</ol>
+<h3 id="学习新知">学习新知</h3>
+<p>恶补 AI 行为、卡组构建机制设计相关文章和演讲。针对性体验了几个游戏。</p>
+<hr>
+<p>挣扎继续中···</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#20219%E5%BC%80%E5%A7%8B%E5%87%86%E5%A4%87">2021.9：开始准备</a>
+<ul>
+<li><a href="#%E5%BF%83%E8%B7%AF%E5%BF%AB%E6%8A%8A%E6%88%91%E4%BA%BA%E7%94%9F%E9%87%8C%E5%89%8D%E5%8D%81%E4%B8%AA%E5%9E%83%E5%9C%BE%E6%B8%B8%E6%88%8F%E5%81%9A%E5%AE%8C">【心路】快把我人生里前十个垃圾游戏做完！</a></li>
+</ul>
+</li>
+<li><a href="#20228-%E5%BB%BA%E7%AB%8B%E4%BF%A1%E5%BF%83">2022.8 建立信心</a>
+<ul>
+<li><a href="#%E7%AD%96%E5%88%92%E6%A1%88%E7%BB%83%E4%B9%A0%E7%BB%83%E4%B9%A0%E6%8B%86%E8%A7%A3%E6%B8%B8%E6%88%8F%E5%92%8C%E5%86%99%E6%A1%88%E5%AD%90">【策划案练习】练习拆解游戏和写案子。</a></li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E6%80%80%E7%96%91">开始怀疑</a></li>
+<li><a href="#%E5%85%B3%E5%8D%A1%E7%BB%83%E4%B9%A0last-tour%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5">【关卡练习】《Last Tour》第一阶段</a></li>
+</ul>
+</li>
+<li><a href="#20229-%E5%BC%80%E5%A7%8B%E6%8A%95%E9%80%92">2022.9 开始投递</a>
+<ul>
+<li><a href="#%E9%9D%A2%E8%AF%95activision-level-designer-intern-%E6%8C%82%E4%BA%86">【面试】Activision - Level Designer Intern → 挂了</a></li>
+<li><a href="#%E7%BB%A7%E7%BB%AD%E6%80%80%E7%96%91">继续怀疑</a></li>
+<li><a href="#%E7%AC%94%E8%AF%95">【笔试】</a></li>
+</ul>
+</li>
+<li><a href="#202210-%E7%BB%A7%E7%BB%AD">2022.10 继续</a>
+<ul>
+<li><a href="#%E9%95%BF%E6%9C%9F%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%A7%8B%E7%AD%B9%E5%A4%87%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8F">【长期项目】开始筹备一个独立游戏</a></li>
+<li><a href="#%E9%9D%A2%E8%AF%95%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95">【面试】模拟面试</a></li>
+</ul>
+</li>
+<li><a href="#202211">2022.11</a>
+<ul>
+<li><a href="#%E9%9D%A2%E8%AF%95%E5%A4%A7%E5%8E%82%E7%B3%BB%E7%BB%9F%E7%AD%96%E5%88%92%E5%AE%9E%E4%B9%A0">【面试】大厂系统策划实习</a></li>
+</ul>
+</li>
+<li><a href="#202301">2023.01</a>
+<ul>
+<li><a href="#%E6%8B%9B%E5%8B%9F%E5%92%8C%E5%B9%B2%E6%B4%BB%E7%BB%A7%E7%BB%AD%E5%B9%B2%E7%8B%AC%E6%B8%B8%E9%A1%B9%E7%9B%AE">【招募和干活】继续干独游项目</a></li>
+<li><a href="#%E5%AD%A6%E4%B9%A0%E6%96%B0%E7%9F%A5">学习新知</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://zhannahz.github.io/post/activision-interview/">
+              <h3 class="post-title">
+                动视面试：关卡方向
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  <a href="https://github.com/getgridea/gridea" target="_blank">Powered by Gridea</a>
+  <a class="rss" href="https://zhannahz.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
